@@ -3,16 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "express": "^4.16.4",
     "react": "16.8.3",
     "react-dom": "16.8.3",
     "react-scripts": "2.1.5",
-    "express": "^4.15.4"
+    "ts-node": "^7.0.1",
+    "typescript": "^3.0.3"
   },
   "main": "index.js",
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon ./bin/server.js"
+    "start": "nodemon ./bin/server.js",
+    "tsc": "tsc"
   },
   "keywords": [],
   "author": "",

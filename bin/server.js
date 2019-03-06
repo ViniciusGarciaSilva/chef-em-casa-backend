@@ -1,4 +1,4 @@
-const app = require('../src/app'); // importa a aplicacao
+const app = require('../build/app'); // importa a aplicacao
 
 const port = normalizaPort(process.env.PORT || '5000'); // define a porta do server
 
