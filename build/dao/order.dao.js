@@ -2,16 +2,16 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var sqlite = require('sqlite-sync');
 sqlite.connect('chef-em-casa.db');
-function getMenus() {
-    var rows = sqlite.run("SELECT * FROM menu");
+function getOrders() {
+    var rows = sqlite.run("SELECT * FROM orders");
     console.log('rows:', rows);
     return (rows);
 }
-exports.getMenus = getMenus;
+exports.getOrders = getOrders;
 
-function getMenuById(id) {
-    var rows = sqlite.run("SELECT * FROM menu where id = " + id);
+function getOrderById(id) {
+    var rows = sqlite.run("SELECT * FROM orders where id = " + id);
     console.log('rows:', rows);
     return (rows);
 }
-exports.getMenuById = getMenuById;
+exports.getOrderById = getOrderById;
