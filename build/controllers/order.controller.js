@@ -1,12 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var menu_dao_1 = require("../dao/menu.dao");
+var menu_dao_1 = require("../dao/order.dao");
 exports.get = function (req, res, next) {
-    var menus = menu_dao_1.getMenus();
+    var menus = menu_dao_1.getOrders();
     res.status(200).send(menus);
 };
 exports.getById = function (req, res, next) {
-    var menu = menu_dao_1.getMenuById(req)
+    var menu = menu_dao_1.getOrderById(1)
     res.status(200).send(menu);
 };
 exports.post = function (req, res, next) {
