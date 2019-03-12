@@ -1,22 +1,25 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var menu_dao_1 = require("../dao/order.dao");
+var orders_dao_1 = require("../dao/order.dao");
 exports.get = function (req, res, next) {
-    var menus = menu_dao_1.getOrders();
-    res.status(200).send(menus);
+    var orders = orders_dao_1.getOrders();
+    res.status(200).send(orders);
 };
 exports.getById = function (req, res, next) {
-    var menu = menu_dao_1.getOrderById(1)
-    res.status(200).send(menu);
+    var orders = orders_dao_1.getOrderById(0)
+    res.status(200).send(orders);
 };
 exports.post = function (req, res, next) {
-    res.status(201).send('post menus');
+    res.status(201).send('post orders');
 };
 exports.put = function (req, res, next) {
     var id = req.params.id;
-    res.status(201).send("put menus " + id);
+    // var orders = orders_dao_1.insertOrder(0, 0, "ordem inserida", "hoje", 0, 0)
+    var orders = orders_dao_1.insertOrder(req.body.providerId, req.body.customerId, req.body.description, req.body.schedule, req.body.price, req.body.status);
+
+    res.status(201).send("put orders " + orders);
 };
 exports.delete = function (req, res, next) {
     var id = req.params.id;
-    res.status(200).send("delete menus " + id);
+    res.status(200).send("delete orders " + id);
 };

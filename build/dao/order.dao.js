@@ -15,3 +15,10 @@ function getOrderById(id) {
     return (rows);
 }
 exports.getOrderById = getOrderById;
+
+function insertOrder(providerId, customerId, description, schedule, price, status) {
+    var rows = sqlite.run("INSERT INTO orders (providerId, customerId, description, schedule, price, status) values (" +providerId + ", " + customerId + ", '" + description + "', '" + schedule + "', " + price + ", " + status + ")");
+    console.log('rows:', rows);
+    return (rows);
+}
+exports.insertOrder = insertOrder;
