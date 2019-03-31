@@ -1,22 +1,32 @@
+const menuDao = require('../dao/menu.dao');
+
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var menu_dao_1 = require("../dao/menu.dao");
+
 exports.get = function (req, res, next) {
-    var menus = menu_dao_1.getMenus();
+    var menus = menuDao.readMenus();
     res.status(200).send(menus);
 };
+
 exports.getById = function (req, res, next) {
-    var menu = menu_dao_1.getMenuById(req)
+    const menu = menuDao.readMenu(req.params.id);
     res.status(200).send(menu);
-};
+}
+
 exports.post = function (req, res, next) {
+    console.log(req.body)
+    menuDao.createMenu(req.body);
     res.status(201).send('post menus');
 };
+
 exports.put = function (req, res, next) {
-    var id = req.params.id;
-    res.status(201).send("put menus " + id);
+    menuDao.updateMenu(req.body);
+    res.status(201).send("put menus");
 };
+
 exports.delete = function (req, res, next) {
-    var id = req.params.id;
-    res.status(200).send("delete menus " + id);
+    menuDao.deleteMenu(req.params.id);
+    res.status(200).send("delete menus");
 };
+
+
