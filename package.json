@@ -79,6 +79,7 @@
     "joi": "^11.4.0",
     "json-stable-stringify": "^1.0.1",
     "json3": "^3.3.2",
+    "jsonwebtoken": "^8.5.1",
     "killable": "^1.0.1",
     "last-call-webpack-plugin": "^3.0.0",
     "loader-runner": "^2.4.0",

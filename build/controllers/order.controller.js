@@ -6,7 +6,7 @@ exports.get = function (req, res, next) {
     res.status(200).send(orders);
 };
 exports.getById = function (req, res, next) {
-    var orders = orders_dao_1.getOrderById(0)
+    var orders = orders_dao_1.getOrderById(1)
     res.status(200).send(orders);
 };
 exports.post = function (req, res, next) {
