@@ -4,16 +4,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var sqlite = require('sqlite-sync');
 sqlite.connect('chef-em-casa.db');
 
-// CU CU CU CU CU CU CU
 function createMenu(menu) {
     console.log("CREATE MENU: ", menu);
     sqlite.run(
-        `INSERT INTO menu (id, title, description, img, dishes, price) VALUES (
+        `INSERT INTO menu (id, title, description, img, price) VALUES (
             ${menu.id},
             "${menu.title}",
             "${menu.description}",
             "${menu.img}",
-            ${menu.dishes},
             ${menu.price}
         )`
     );
@@ -41,9 +39,8 @@ function updateMenu(menu) {
         title = "${menu.title}",
         description = "${menu.description}",
         img = "${menu.img}",
-        dishes = ${menu.dishes},
         price = ${menu.price}
-    where id = ${menu.id}`);
+        where id = ${menu.id}`);
     console.log("Update Menu id: " + menu.id);
 }
 exports.updateMenu = updateMenu;
