@@ -5,10 +5,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var express_1 = __importDefault(require("express"));
 var router = express_1.default.Router();
-var dishontroller = require('../controllers/menu.controller');
-router.get('/', dishontroller.get);
-router.get('/:id', dishontroller.getById);
-router.post('/', dishontroller.post);
-router.put('/:id', dishontroller.put);
-router.delete('/:id', dishontroller.delete);
+var dishController = require('../controllers/dish.controller');
+router.get('/', dishController.get);
+router.get('/:id', dishController.getById);
+router.get('/menuDishes/:id', dishController.getMenuDishes)
+router.post('/', dishController.post);
+router.put('/:id', dishController.put);
+router.delete('/:id', dishController.delete);
 module.exports = router;
