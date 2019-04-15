@@ -46,7 +46,8 @@ function updateMenu(menu) {
 exports.updateMenu = updateMenu;
 
 function deleteMenu(id) {
-    console.log(`DELETE FROM menu WHERE id = ${id}`);
-}
+    console.log("Delete Menu " + id);
+    sqlite.run("DELETE FROM menu WHERE id = " + id);
+  }
 exports.deleteMenu = deleteMenu;
 
